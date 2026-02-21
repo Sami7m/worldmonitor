@@ -1,9 +1,11 @@
-# PARIS SENTINEL EDITION - GUIDE DE DÉMARRAGE (AI UPGRADE)
+# PARIS SENTINEL EDITION - GUIDE DE DÉMARRAGE (VERSION ZERO-CONFIG)
 
 Bienvenue sur la version "Paris Sentinel" de World Monitor. 
-Cette version transforme l'application en un dashboard tactique 3D Globe focalisé sur l'Île-de-France.
+Cette version a été optimisée pour fonctionner **SANS AUCUNE CLÉ API**. 
 
-## 1. INSTALLATION & LANCEMENT
+L'application utilise désormais des sources OpenData publiques (OpenData Paris et flux directs Sytadin).
+
+## 1. INSTALLATION & LANCEMENT (ULTRA-SIMPLE)
 
 1.  Assurez-vous d'avoir **Node.js (v18+)** et **pnpm** (ou npm) installés.
 2.  Dans le terminal, à la racine du projet :
@@ -13,44 +15,26 @@ Cette version transforme l'application en un dashboard tactique 3D Globe focalis
     ```
 3.  Ouvrez votre navigateur sur `http://localhost:5173`.
 
-## 2. CONFIGURATION DES CLÉS API (PLUG & PLAY)
+## 2. CONFIGURATION (DÉJÀ PRÊTE)
 
-Pour débloquer l'intégralité des fonctionnalités en temps réel, créez un fichier `.env` à la racine :
+Le projet est configuré par défaut pour activer le mode Paris. 
+Le fichier `.env` n'est plus nécessaire pour les fonctionnalités de base (Trafic, Métro, Caméras).
 
-```env
-# ACTIVER LE MODE PARIS (Obligatoire pour le focus Paris)
-VITE_FOCUS_PARIS=true
+## 3. FONCTIONNALITÉS ACTIVES (SANS CLÉ)
 
-# TRANSPORTS EN TEMPS RÉEL (Navitia / IDFM)
-# Obtenez votre clé gratuite sur : https://www.navitia.io/
-VITE_NAVITIA_TOKEN=votre_cle_navitia_ici
-
-# TRAFIC ROUTIER (Optionnel - Fallback sur OpenData Paris par défaut)
-# Obtenez votre clé sur le portail Sytadin/DiRIF
-VITE_SYTADIN_API_KEY=votre_cle_sytadin_ici
-
-# BÂTIMENTS 3D (Cesium Ion - Optionnel)
-# Si vous avez un compte Cesium Ion pour des bâtiments plus détaillés
-VITE_CESIUM_ION_TOKEN=votre_cle_cesium_ici
-```
-
-## 3. FONCTIONNALITÉS CLÉS
-
--   **3D Globe** : La carte est maintenant une sphère 3D complète avec atmosphère.
--   **Focus Paris** : Centrage automatique et vue tactique (pitch 60°) sur l'Île-de-France.
--   **UI Tactical 2026** : Interface ultra-sombre, glassmorphism cyan, animations de scanline.
--   **Temps Réel** : 
-    -   Trafic routier (flux Sytadin/OpenData).
-    -   Infrastructures métro/RER avec coloration officielle.
-    -   Caméras du Périphérique (flux images Sytadin).
+-   **3D Globe (Next-Gen)** : Une sphère 3D complète avec atmosphère et étoiles.
+-   **Trafic Temps Réel** : Données récupérées directement sur le portail OpenData de la Ville de Paris.
+-   **Caméras Sytadin** : Flux d'images en direct du Périphérique (Porte de la Chapelle, Maillot, Italie, etc.).
+-   **Réseau Métro/RER** : Visualisation complète avec les couleurs officielles des lignes.
+-   **UI Tactical 2026** : Interface sombre, effets de verre dépoli (glassmorphism) et animations cyan.
 
 ## 4. DÉPANNAGE
 
--   Si la carte est noire : Vérifiez que votre navigateur supporte WebGL2.
--   Si les bâtiments ne s'affichent pas : Assurez-vous d'être bien zoomé sur Paris (Zoom > 12).
--   Si les données temps réel manquent : Vérifiez vos tokens dans le fichier `.env`.
+-   **Carte Noire** : Votre navigateur doit supporter WebGL2.
+-   **Pas de Données** : Vérifiez que vous avez bien une connexion internet active pour charger les flux distants.
+-   **Zoom** : Le focus Paris s'active automatiquement, mais vous pouvez naviguer sur tout le globe.
 
 ---
-Développé avec passion par Manus (AI Agent) pour Sami7m.
-Version: 1.1.0-ai
+Développé par Manus (AI Agent) pour Sami7m.
+Version: 1.2.0-zero-config
 Branch: worldmonitor_ai

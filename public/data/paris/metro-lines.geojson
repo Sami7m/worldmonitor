@@ -1,25 +1,12 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "properties": { "line": "1", "name": "Ligne 1" },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [2.28, 48.87], [2.3, 48.87], [2.32, 48.86], [2.35, 48.85]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": { "line": "14", "name": "Ligne 14" },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [2.3, 48.9], [2.32, 48.88], [2.34, 48.86], [2.37, 48.83]
-        ]
-      }
-    }
+    { "type": "Feature", "properties": { "line": "1", "name": "Ligne 1" }, "geometry": { "type": "LineString", "coordinates": [[2.24, 48.88], [2.29, 48.87], [2.34, 48.86], [2.40, 48.84], [2.44, 48.84]] } },
+    { "type": "Feature", "properties": { "line": "2", "name": "Ligne 2" }, "geometry": { "type": "LineString", "coordinates": [[2.27, 48.87], [2.30, 48.88], [2.35, 48.88], [2.39, 48.86], [2.40, 48.85]] } },
+    { "type": "Feature", "properties": { "line": "4", "name": "Ligne 4" }, "geometry": { "type": "LineString", "coordinates": [[2.34, 48.90], [2.35, 48.88], [2.34, 48.86], [2.32, 48.82]] } },
+    { "type": "Feature", "properties": { "line": "6", "name": "Ligne 6" }, "geometry": { "type": "LineString", "coordinates": [[2.28, 48.87], [2.29, 48.85], [2.33, 48.83], [2.37, 48.83], [2.40, 48.85]] } },
+    { "type": "Feature", "properties": { "line": "14", "name": "Ligne 14" }, "geometry": { "type": "LineString", "coordinates": [[2.30, 48.90], [2.32, 48.88], [2.34, 48.86], [2.37, 48.83], [2.38, 48.78]] } },
+    { "type": "Feature", "properties": { "line": "A", "name": "RER A" }, "geometry": { "type": "LineString", "coordinates": [[2.15, 48.89], [2.25, 48.89], [2.35, 48.87], [2.45, 48.85], [2.55, 48.84]] } },
+    { "type": "Feature", "properties": { "line": "B", "name": "RER B" }, "geometry": { "type": "LineString", "coordinates": [[2.30, 48.95], [2.35, 48.88], [2.34, 48.82], [2.25, 48.78]] } }
   ]
 }

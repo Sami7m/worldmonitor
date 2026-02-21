@@ -1,42 +1,104 @@
-/* PARIS EDITION - Glassmorphism Spy Theme */
+/**
+ * PARIS SENTINEL - TACTICAL DASHBOARD 2026
+ * Extreme Dark Mode with Glassmorphism and Cyan Glow
+ */
+
 :root[focus-paris] {
-  --paris-cyan: #00f2ff;
-  --paris-cyan-glow: rgba(0, 242, 255, 0.5);
-  --paris-red: #ff4444;
-  --paris-red-glow: rgba(255, 68, 68, 0.5);
-  --paris-bg: rgba(10, 15, 20, 0.85);
-  --paris-border: rgba(0, 242, 255, 0.3);
-  --paris-glass: blur(12px) saturate(180%);
+  /* Core Colors */
+  --p-cyan: #00f2ff;
+  --p-cyan-dim: rgba(0, 242, 255, 0.15);
+  --p-cyan-glow: 0 0 15px rgba(0, 242, 255, 0.4);
+  --p-red: #ff3e3e;
+  --p-red-dim: rgba(255, 62, 62, 0.15);
+  --p-bg-deep: #05070a;
+  --p-bg-glass: rgba(10, 15, 25, 0.75);
+  --p-border: rgba(0, 242, 255, 0.25);
+  --p-border-heavy: rgba(0, 242, 255, 0.5);
+  
+  /* Typography */
+  --p-font: 'JetBrains Mono', 'Inter', monospace;
 }
 
-[focus-paris] .header {
-  background: var(--paris-bg) !important;
-  backdrop-filter: var(--paris-glass) !important;
-  border-bottom: 1px solid var(--paris-border) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+[focus-paris] body {
+  background-color: var(--p-bg-deep) !important;
+  color: #e0e6ed !important;
+  font-family: var(--p-font) !important;
 }
 
-[focus-paris] .variant-btn.active {
-  background: var(--paris-cyan-glow) !important;
-  border-color: var(--paris-cyan) !important;
-  color: var(--paris-cyan) !important;
-  text-shadow: 0 0 8px var(--paris-cyan);
-}
-
-[focus-paris] .panel {
-  background: var(--paris-bg) !important;
-  backdrop-filter: var(--paris-glass) !important;
-  border: 1px solid var(--paris-border) !important;
-  border-radius: 4px !important;
+/* Glassmorphism Panels */
+[focus-paris] .panel, 
+[focus-paris] .modal-content,
+[focus-paris] .settings-window {
+  background: var(--p-bg-glass) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid var(--p-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8) !important;
 }
 
 [focus-paris] .panel-header {
-  border-bottom: 1px solid var(--paris-border) !important;
-  color: var(--paris-cyan) !important;
+  background: rgba(0, 242, 255, 0.05) !important;
+  border-bottom: 1px solid var(--p-border) !important;
+  color: var(--p-cyan) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 12px 16px !important;
 }
 
-[focus-paris] .header-clock {
-  color: var(--paris-cyan) !important;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 1px;
+/* Header Styling */
+[focus-paris] .header {
+  background: rgba(5, 7, 10, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid var(--p-border-heavy) !important;
+  height: 60px !important;
+}
+
+[focus-paris] .logo {
+  color: var(--p-cyan) !important;
+  text-shadow: var(--p-cyan-glow);
+  font-weight: 900 !important;
+  letter-spacing: -1px;
+}
+
+[focus-paris] .variant-btn.active {
+  background: var(--p-cyan-dim) !important;
+  border: 1px solid var(--p-cyan) !important;
+  color: var(--p-cyan) !important;
+  box-shadow: inset 0 0 10px var(--p-cyan-dim);
+}
+
+/* Map Overlays */
+[focus-paris] .deckgl-mode .mapboxgl-ctrl-group {
+  background: var(--p-bg-glass) !important;
+  border: 1px solid var(--p-border) !important;
+}
+
+/* Animations */
+@keyframes pulse-cyan {
+  0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 242, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+}
+
+[focus-paris] .status-dot {
+  background-color: var(--p-cyan) !important;
+  box-shadow: var(--p-cyan-glow);
+  animation: pulse-cyan 2s infinite;
+}
+
+/* Scrollbars */
+[focus-paris] ::-webkit-scrollbar {
+  width: 4px;
+}
+[focus-paris] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+[focus-paris] ::-webkit-scrollbar-thumb {
+  background: var(--p-border);
+  border-radius: 10px;
+}
+[focus-paris] ::-webkit-scrollbar-thumb:hover {
+  background: var(--p-cyan);
 }

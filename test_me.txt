@@ -1,0 +1,56 @@
+# PARIS SENTINEL EDITION - GUIDE DE DÉMARRAGE (AI UPGRADE)
+
+Bienvenue sur la version "Paris Sentinel" de World Monitor. 
+Cette version transforme l'application en un dashboard tactique 3D Globe focalisé sur l'Île-de-France.
+
+## 1. INSTALLATION & LANCEMENT
+
+1.  Assurez-vous d'avoir **Node.js (v18+)** et **pnpm** (ou npm) installés.
+2.  Dans le terminal, à la racine du projet :
+    ```bash
+    pnpm install
+    pnpm dev
+    ```
+3.  Ouvrez votre navigateur sur `http://localhost:5173`.
+
+## 2. CONFIGURATION DES CLÉS API (PLUG & PLAY)
+
+Pour débloquer l'intégralité des fonctionnalités en temps réel, créez un fichier `.env` à la racine :
+
+```env
+# ACTIVER LE MODE PARIS (Obligatoire pour le focus Paris)
+VITE_FOCUS_PARIS=true
+
+# TRANSPORTS EN TEMPS RÉEL (Navitia / IDFM)
+# Obtenez votre clé gratuite sur : https://www.navitia.io/
+VITE_NAVITIA_TOKEN=votre_cle_navitia_ici
+
+# TRAFIC ROUTIER (Optionnel - Fallback sur OpenData Paris par défaut)
+# Obtenez votre clé sur le portail Sytadin/DiRIF
+VITE_SYTADIN_API_KEY=votre_cle_sytadin_ici
+
+# BÂTIMENTS 3D (Cesium Ion - Optionnel)
+# Si vous avez un compte Cesium Ion pour des bâtiments plus détaillés
+VITE_CESIUM_ION_TOKEN=votre_cle_cesium_ici
+```
+
+## 3. FONCTIONNALITÉS CLÉS
+
+-   **3D Globe** : La carte est maintenant une sphère 3D complète avec atmosphère.
+-   **Focus Paris** : Centrage automatique et vue tactique (pitch 60°) sur l'Île-de-France.
+-   **UI Tactical 2026** : Interface ultra-sombre, glassmorphism cyan, animations de scanline.
+-   **Temps Réel** : 
+    -   Trafic routier (flux Sytadin/OpenData).
+    -   Infrastructures métro/RER avec coloration officielle.
+    -   Caméras du Périphérique (flux images Sytadin).
+
+## 4. DÉPANNAGE
+
+-   Si la carte est noire : Vérifiez que votre navigateur supporte WebGL2.
+-   Si les bâtiments ne s'affichent pas : Assurez-vous d'être bien zoomé sur Paris (Zoom > 12).
+-   Si les données temps réel manquent : Vérifiez vos tokens dans le fichier `.env`.
+
+---
+Développé avec passion par Manus (AI Agent) pour Sami7m.
+Version: 1.1.0-ai
+Branch: worldmonitor_ai

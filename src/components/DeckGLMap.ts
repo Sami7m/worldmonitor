@@ -396,6 +396,7 @@ export class DeckGLMap {
       renderWorldCopies: false,
       attributionControl: false,
       interactive: true,
+      projection: { name: 'globe' }, // PARIS EDITION - Enable 3D Globe
       ...(MAP_INTERACTION_MODE === 'flat'
         ? {
           maxPitch: 0,
@@ -404,6 +405,17 @@ export class DeckGLMap {
           touchPitch: false,
         }
         : {}),
+    });
+
+    // PARIS EDITION - Add Globe atmosphere and sky
+    this.maplibreMap.on('style.load', () => {
+      this.maplibreMap?.setFog({
+        color: initialTheme === 'light' ? 'white' : 'rgb(5, 10, 20)',
+        'high-color': initialTheme === 'light' ? 'white' : 'rgb(0, 0, 0)',
+        'horizon-blend': 0.02,
+        'space-color': 'rgb(0, 0, 0)',
+        'star-intensity': 0.6
+      });
     });
 
     const canvas = this.maplibreMap.getCanvas();

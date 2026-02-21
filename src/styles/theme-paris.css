@@ -1,0 +1,42 @@
+/* PARIS EDITION - Glassmorphism Spy Theme */
+:root[focus-paris] {
+  --paris-cyan: #00f2ff;
+  --paris-cyan-glow: rgba(0, 242, 255, 0.5);
+  --paris-red: #ff4444;
+  --paris-red-glow: rgba(255, 68, 68, 0.5);
+  --paris-bg: rgba(10, 15, 20, 0.85);
+  --paris-border: rgba(0, 242, 255, 0.3);
+  --paris-glass: blur(12px) saturate(180%);
+}
+
+[focus-paris] .header {
+  background: var(--paris-bg) !important;
+  backdrop-filter: var(--paris-glass) !important;
+  border-bottom: 1px solid var(--paris-border) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+[focus-paris] .variant-btn.active {
+  background: var(--paris-cyan-glow) !important;
+  border-color: var(--paris-cyan) !important;
+  color: var(--paris-cyan) !important;
+  text-shadow: 0 0 8px var(--paris-cyan);
+}
+
+[focus-paris] .panel {
+  background: var(--paris-bg) !important;
+  backdrop-filter: var(--paris-glass) !important;
+  border: 1px solid var(--paris-border) !important;
+  border-radius: 4px !important;
+}
+
+[focus-paris] .panel-header {
+  border-bottom: 1px solid var(--paris-border) !important;
+  color: var(--paris-cyan) !important;
+}
+
+[focus-paris] .header-clock {
+  color: var(--paris-cyan) !important;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+}

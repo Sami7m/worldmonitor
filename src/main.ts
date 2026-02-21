@@ -1,4 +1,9 @@
 import './styles/main.css';
+// PARIS EDITION
+if (import.meta.env.VITE_FOCUS_PARIS === 'true') {
+  import('./styles/theme-paris.css');
+}
+
 import 'maplibre-gl/dist/maplibre-gl.css';
 import * as Sentry from '@sentry/browser';
 import { inject } from '@vercel/analytics';
@@ -120,6 +125,11 @@ loadDesktopSecrets().then(async () => {
   await initAnalytics();
   trackApiKeysSnapshot();
 }).catch(() => {});
+
+// PARIS EDITION - Force attribute for theme
+if (import.meta.env.VITE_FOCUS_PARIS === 'true') {
+  document.documentElement.setAttribute('focus-paris', 'true');
+}
 
 // Apply stored theme preference before app initialization (safety net for inline script)
 applyStoredTheme();

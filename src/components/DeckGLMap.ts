@@ -378,11 +378,21 @@ export class DeckGLMap {
     const preset = VIEW_PRESETS[this.state.view];
     const initialTheme = getCurrentTheme();
 
+    // PARIS EDITION - Initial view override
+    const center: [number, number] = isParisMode() 
+      ? [PARIS_CENTER.longitude, PARIS_CENTER.latitude] 
+      : [preset.longitude, preset.latitude];
+    const zoom = isParisMode() ? PARIS_CENTER.zoom : preset.zoom;
+    const pitch = isParisMode() ? PARIS_CENTER.pitch : 0;
+    const bearing = isParisMode() ? PARIS_CENTER.bearing : 0;
+
     this.maplibreMap = new maplibregl.Map({
       container: 'deckgl-basemap',
       style: initialTheme === 'light' ? LIGHT_STYLE : DARK_STYLE,
-      center: [preset.longitude, preset.latitude],
-      zoom: preset.zoom,
+      center,
+      zoom,
+      pitch,
+      bearing,
       renderWorldCopies: false,
       attributionControl: false,
       interactive: true,
@@ -905,6 +915,10 @@ export class DeckGLMap {
     // Refresh theme-aware overlay colors on each rebuild
     COLORS = getOverlayColors();
     const layers: (Layer | null | false)[] = [];
+    // PARIS EDITION
+    if (isParisMode()) {
+      layers.push(...this.buildParisLayers());
+    }
     const { layers: mapLayers } = this.state;
     const filteredEarthquakes = this.filterByTime(this.earthquakes, (eq) => eq.occurredAt);
     const filteredNaturalEvents = this.filterByTime(this.naturalEvents, (event) => event.date);

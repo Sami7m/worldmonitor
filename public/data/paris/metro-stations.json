@@ -1,0 +1,5 @@
+[
+  { "id": "st-01", "name": "Châtelet", "coordinates": [2.347, 48.858], "line": "1" },
+  { "id": "st-02", "name": "Gare du Nord", "coordinates": [2.355, 48.882], "line": "4" },
+  { "id": "st-03", "name": "Saint-Lazare", "coordinates": [2.325, 48.875], "line": "14" }
+]
